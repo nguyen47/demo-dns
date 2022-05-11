@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name www.SERVER_NAME SERVER_NAME;
+
+    location / {
+        proxy_pass https://lib-web-builder-dev.lifein.click/;
+	proxy_set_header    X-Real-IP $remote_addr;
+    	proxy_set_header    X-Forwarded-Proto $scheme;
+    }
+
+}
